@@ -46,8 +46,8 @@ app.get('/users',function(req,res,next){
 app.post('/users',function(req,res,next){
   var newUser = req.body;
   // expects no rows
-  db.none('INSERT INTO users(username,password)'+
-    'values(${username},${password})',
+  db.none('INSERT INTO toDoList(taskname,description)'+
+    'values(${taskname},${description})',
     req.body)
   .then(function(){
     res.redirect('/users');
